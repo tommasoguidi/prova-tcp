@@ -14,14 +14,13 @@ def run_echo():
             "enable_relay_client": False,
             "enable_relay_service": False,
             "knows_is_public": False,
-            "max_connections": 1000,
             "enable_tls": False,
             "domain_name": None,
             "tls_cert_path": None,
             "tls_key_path": None,
-            "dht_enabled": True,
+            "dht_enabled": False,
             "dht_mode": 'client',
-            "dht_keep": True
+            "dht_keep": False
         }
     node = P2P(**node_config)
     

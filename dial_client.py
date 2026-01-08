@@ -13,20 +13,18 @@ def run_client():
             "enable_relay_client": False,
             "enable_relay_service": False,
             "knows_is_public": False,
-            "max_connections": 1000,
             "enable_tls": False,
             "domain_name": None,
             "tls_cert_path": None,
             "tls_key_path": None,
-            "dht_enabled": True,
+            "dht_enabled": False,
             "dht_mode": 'client',
-            "dht_keep": True
+            "dht_keep": False
         }
     node = P2P(**node_config)
     print(f"Client avviato. ID: {node.peer_id}")
 
-    print("Incolla l'indirizzo del nodo Echo: ", end='', flush=True)
-    target_addr = input().strip()
+    target_addr = '/ip4/193.205.7.181/tcp/20200/p2p/12D3KooWMaiQN4ZXsFkHRex4gsn64m5fhgEMShbPpnYZ3UtFUV9J'
     try:
         info = node.connect_to([target_addr])
         target_id = info['ID']
